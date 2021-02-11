@@ -4,7 +4,7 @@ import { disableTextArea, enableTextArea } from '../elements/textarea.js'
 import { disableButton, enableButton } from '../elements/button.js'
 import { disableFieldset, enableFieldset } from '../elements/fieldset.js'
 
-function hideRcPanels (rcPanelsGroup) {
+export function hideRcPanels (rcPanelsGroup) {
   const group = document.querySelector(`[data-rc-panel-group=${rcPanelsGroup}]`)
 
   group.querySelectorAll('[data-rc-panel-uid]').forEach(function (elem) {
@@ -18,7 +18,7 @@ function hideRcPanels (rcPanelsGroup) {
   })
 }
 
-function activatePanel (panel) {
+export function activatePanel (panel) {
   const active = document.querySelector(panel)
   active.setAttribute('data-rc-active', '')
 
@@ -28,5 +28,3 @@ function activatePanel (panel) {
   enableButton(active)
   enableFieldset(active)
 }
-
-export { hideRcPanels, activatePanel }
