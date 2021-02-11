@@ -1,0 +1,35 @@
+{
+  "name": "radio-control-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "devDependencies": {
+    "@babel/cli": "^7.12.13",
+    "@babel/core": "^7.12.13",
+    "@babel/plugin-proposal-class-properties": "^7.12.13",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-react": "^7.12.13",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0"
+  },
+  "scripts": {
+    "dev": "webpack --watch --mode=development",
+    "prod": "webpack --mode=prodcution",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatthewKennedy/radio-control-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatthewKennedy/radio-control-js/issues"
+  },
+  "homepage": "https://github.com/MatthewKennedy/radio-control-js#readme",
+  "dependencies": {
+    "babel-loader": "^8.2.2"
+  }
+}
