@@ -141,7 +141,7 @@
                 <input type="checkbox" class="form-check-input" id="exampleCheck2">
                 <label class="form-check-label" for="exampleCheck2">Check me out</label>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary" disabled>Submit</button>
             </form>
 
           </div>
@@ -219,6 +219,20 @@
             Second Content 2
           </div>
           <div class="card-body">
+            <form>
+              <fieldset required>
+                <legend>Choose your favorite monster</legend>
+
+                <input type="radio" id="aaa" name="monsterboots">
+                <label for="aaa">Aaa</label><br/>
+
+                <input type="radio" id="bbb" name="monsterboots" disabled>
+                <label for="bbb">Bbb</label><br/>
+
+                <input type="radio" id="ccc" name="monsterboots">
+                <label for="ccc">Ccc</label>
+              </fieldset>
+            </form>
             <textarea disabled></textarea>
             <command type="command" label="Save"
             icon="icons/save.png" onclick="save()">
@@ -253,7 +267,7 @@
           <div class="card-body">
 
             <form>
-              <fieldset>
+              <fieldset disabled>
                 <legend>Choose your favorite monster</legend>
 
                 <input type="radio" id="kraken" name="monster">
@@ -276,13 +290,13 @@
             </select>
 
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaul6">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaul6" disabled>
               <label class="form-check-label" for="flexCheckDefaul6">
                 Default checkbox
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecke7" checked>
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecke7" checked required>
               <label class="form-check-label" for="flexCheckChecke7">
                 Checked checkbox
               </label>
