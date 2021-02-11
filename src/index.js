@@ -1,4 +1,5 @@
 import { hideRcPanels, activatePanel } from './utils/visibility.js'
+import { recordElState } from './utils/state.js'
 
 const radioButtonsContainer = '[data-radio-control]'
 
@@ -15,9 +16,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function initiateRcPanels (radioControlEl) {
   const selectedRadioValue = radioControlEl.querySelector('input[type=radio]:checked').value
+  const panel = `[data-rc-panel-uid=${radioControlEl.dataset.radioControl + '_' + selectedRadioValue}]`
 
+  recordElState(radioControlEl.dataset.radioControl)
   hideRcPanels(radioControlEl.dataset.radioControl)
-  activatePanel(`[data-rc-panel-uid=${radioControlEl.dataset.radioControl + '_' + selectedRadioValue}]`)
+  activatePanel(panel)
 }
 
 function monitorRadiosForChange (radioControlEl) {
