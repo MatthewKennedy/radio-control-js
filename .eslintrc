@@ -21,6 +21,3 @@ globals:
 env:
   browser: true
   jquery: true
-
-rules:
-  no-var: off
