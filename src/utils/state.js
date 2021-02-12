@@ -7,11 +7,13 @@ import { buttonDefaultAttributes } from '../elements/button.js'
 export function recordElState (rcPanelsGroup) {
   const group = document.querySelector(`[data-rc-panel-group=${rcPanelsGroup}]`)
 
-  group.querySelectorAll('[data-rc-panel-uid]').forEach(function (elem) {
-    inputDefaultAttributes(elem)
-    textareaDefaultAttributes(elem)
-    selectDefaultAttributes(elem)
-    fieldsetDefaultAttributes(elem)
-    buttonDefaultAttributes(elem)
-  })
+  if (group) {
+    group.querySelectorAll('[data-rc-panel-uid]').forEach(function (elem) {
+      inputDefaultAttributes(elem)
+      textareaDefaultAttributes(elem)
+      selectDefaultAttributes(elem)
+      fieldsetDefaultAttributes(elem)
+      buttonDefaultAttributes(elem)
+    })
+  }
 }

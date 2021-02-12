@@ -309,6 +309,106 @@
     </div>
   </div>
 
+  <div class="container">
+    <div class="row">
+
+      <hr class="my-5">
+
+
+      <div class="col-6" >
+        <!-- RADIO BUTTONS -->
+        <!-- ADD: data-radio-control="example" to any element that wraps a set of radios for one -->
+        <fieldset data-radio-control="example">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="Example" id="ex1" value="1">
+            <label class="form-check-label" for="ex1">
+              Primary Alert
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="Example" id="ex2" value="2" checked>
+            <label class="form-check-label" for="ex2">
+              Secondary Alert
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="Example" id="ex3" value="3">
+            <label class="form-check-label" for="ex3">
+              Success Alert
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="Example" id="ex4" value=4>
+            <label class="form-check-label" for="ex4">
+              Danger Alert
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="Example" id="ex5" value="5">
+            <label class="form-check-label" for="ex5">
+              Warning Alert
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="Example" id="ex6" value="6">
+            <label class="form-check-label" for="ex6">
+              Info Alert
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="Example" id="ex7" value="7">
+            <label class="form-check-label" for="ex7">
+              Light Alert
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="Example" id="ex8" value="8">
+            <label class="form-check-label" for="ex8">
+              Dark Alert
+            </label>
+          </div>
+        </fieldset>
+
+      </div>
+
+
+      <!-- PANELS -->
+      <!-- Identify a container for the panels you wish to control via radio buttons
+           ADD: data-rc-panel-group="example" to an element wrappiig  -->
+      <div class="col-6" data-rc-panel-group="example">
+
+        <!-- Give each panel has an unique identifier (data-rc-panel-uid="second_3") constisting of the target id and radio vaule: (example)_(radio.value)
+        panels should be block level elements -->
+        <div class="alert alert-primary" role="alert" data-rc-panel-uid="example_1">
+          A simple primary alert—check it out!
+        </div>
+        <div class="alert alert-secondary" role="alert" data-rc-panel-uid="example_2">
+          A simple secondary alert—check it out!
+        </div>
+        <div class="alert alert-success" role="alert" data-rc-panel-uid="example_3">
+          A simple success alert—check it out!
+        </div>
+        <div class="alert alert-danger" role="alert" data-rc-panel-uid="example_4">
+          A simple danger alert—check it out!
+        </div>
+        <div class="alert alert-warning" role="alert" data-rc-panel-uid="example_5">
+          A simple warning alert—check it out!
+        </div>
+        <div class="alert alert-info" role="alert" data-rc-panel-uid="example_6">
+          A simple info alert—check it out!
+        </div>
+        <div class="alert alert-light" role="alert" data-rc-panel-uid="example_7">
+          A simple light alert—check it out!
+        </div>
+        <div class="alert alert-dark" role="alert" data-rc-panel-uid="example_9">
+          A simple dark alert—check it out!
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
   <script type="text/javascript" src="dist/main.js"></script>
 </body>
 </html>
