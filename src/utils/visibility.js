@@ -5,20 +5,14 @@ import { disableButton, enableButton } from '../elements/button.js'
 import { disableFieldset, enableFieldset } from '../elements/fieldset.js'
 
 export function hideRcPanels (rcPanelsGroup) {
-  const group = document.querySelector(`[data-rc-panel-group=${rcPanelsGroup}]`)
-  if (group) {
-    group.querySelectorAll('[data-rc-panel-uid]').forEach(function (elem) {
-      elem.removeAttribute('data-rc-active')
-
-      disableInput(group)
-      disableSelect(group)
-      disableTextArea(group)
-      disableButton(group)
-      disableFieldset(group)
-    })
-  } else {
-    console.log(`Wrap your ${rcPanelsGroup} pannels with a block-level element, and add the attribute: [data-rc-panel-group="${rcPanelsGroup}"]`)
-  }
+  document.querySelectorAll('[data-rc-panel-uid]').forEach(function (elem) {
+    elem.removeAttribute('data-rc-active')
+    disableInput(elem)
+    disableSelect(elem)
+    disableTextArea(elem)
+    disableButton(elem)
+    disableFieldset(elem)
+  })
 }
 
 export function activatePanel (panel) {
