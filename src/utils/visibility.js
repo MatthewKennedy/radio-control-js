@@ -1,3 +1,5 @@
+import { initiateRcPanels } from '../index.js'
+
 import { disableInput, enableInput } from '../elements/input.js'
 import { disableSelect, enableSelect } from '../elements/select.js'
 import { disableTextArea, enableTextArea } from '../elements/textarea.js'
@@ -32,6 +34,10 @@ export function activatePanel (panel) {
     enableTextArea(active)
     enableButton(active)
     enableFieldset(active)
+
+    active.querySelectorAll('[data-radio-control]').forEach(function (nestedElement) {
+      initiateRcPanels(nestedElement)
+    })
   } else {
     console.log(`There is no panel in your DOM with the attribute: "${panel}"`)
   }

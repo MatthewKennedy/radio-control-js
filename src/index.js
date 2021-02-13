@@ -5,6 +5,7 @@ const radioButtonsContainer = '[data-radio-control]'
 
 document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelector(radioButtonsContainer)) {
+    recordElState()
     document.querySelectorAll(radioButtonsContainer).forEach(function (elem) {
       const radioControlEl = document.querySelector(`[data-radio-control=${elem.dataset.radioControl}]`)
 
@@ -14,11 +15,11 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 })
 
-function initiateRcPanels (radioControlEl) {
+export function initiateRcPanels (radioControlEl) {
+  console.log(radioControlEl);
   const selectedRadioValue = radioControlEl.querySelector('input[type=radio]:checked').value
   const panel = `[data-rc-panel-uid=${radioControlEl.dataset.radioControl + '_' + selectedRadioValue}]`
 
-  recordElState(radioControlEl.dataset.radioControl)
   hideRcPanels(radioControlEl.dataset.radioControl)
   activatePanel(panel)
 }
