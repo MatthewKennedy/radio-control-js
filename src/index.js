@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 export function initiateRcPanels (radioControlEl) {
-  console.log(radioControlEl);
   const selectedRadioValue = radioControlEl.querySelector('input[type=radio]:checked').value
   const panel = `[data-rc-panel-uid=${radioControlEl.dataset.radioControl + '_' + selectedRadioValue}]`
 
