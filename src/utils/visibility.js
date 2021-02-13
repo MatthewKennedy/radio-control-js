@@ -1,3 +1,4 @@
+import { initiateRcPanels } from '../index.js'
 import { disableInput, enableInput } from '../elements/input.js'
 import { disableSelect, enableSelect } from '../elements/select.js'
 import { disableTextArea, enableTextArea } from '../elements/textarea.js'
@@ -25,6 +26,10 @@ export function activatePanel (panel) {
   const active = document.querySelector(panel)
 
   if (active) {
+    active.querySelectorAll('[data-radio-control]').forEach(function (elem) {
+      initiateRcPanels(elem)
+    })
+
     active.setAttribute('data-rc-active', '')
 
     enableInput(active)

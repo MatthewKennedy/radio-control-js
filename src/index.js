@@ -7,18 +7,18 @@ document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelector(radioButtonsContainer)) {
     document.querySelectorAll(radioButtonsContainer).forEach(function (elem) {
       const radioControlEl = document.querySelector(`[data-radio-control=${elem.dataset.radioControl}]`)
-
+      console.log(elem);
+      recordElState(radioControlEl.dataset.radioControl)
       initiateRcPanels(radioControlEl)
       monitorRadiosForChange(radioControlEl)
     })
   }
 })
 
-function initiateRcPanels (radioControlEl) {
+export function initiateRcPanels (radioControlEl) {
   const selectedRadioValue = radioControlEl.querySelector('input[type=radio]:checked').value
   const panel = `[data-rc-panel-uid=${radioControlEl.dataset.radioControl + '_' + selectedRadioValue}]`
 
-  recordElState(radioControlEl.dataset.radioControl)
   hideRcPanels(radioControlEl.dataset.radioControl)
   activatePanel(panel)
 }
