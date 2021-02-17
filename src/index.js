@@ -4,15 +4,15 @@ import { recordElState } from './utils/state.js'
 const radioButtonsContainer = '[data-radio-control]'
 
 document.addEventListener('DOMContentLoaded', function () {
-  if (document.querySelector(radioButtonsContainer)) {
-    recordElState()
-    document.querySelectorAll(radioButtonsContainer).forEach(function (elem) {
-      const radioControlEl = document.querySelector(`[data-radio-control=${elem.dataset.radioControl}]`)
+  if (!document.querySelector(radioButtonsContainer)) return
 
-      initiateRcPanels(radioControlEl)
-      monitorRadiosForChange(radioControlEl)
-    })
-  }
+  recordElState()
+  document.querySelectorAll(radioButtonsContainer).forEach(function (elem) {
+    const radioControlEl = document.querySelector(`[data-radio-control=${elem.dataset.radioControl}]`)
+
+    initiateRcPanels(radioControlEl)
+    monitorRadiosForChange(radioControlEl)
+  })
 })
 
 export function initiateRcPanels (radioControlEl) {
