@@ -1,5 +1,5 @@
 {
-  "name": "Radio Control",
+  "name": "radio-control",
   "version": "1.0.0",
   "description": "Control activate / deactivate DOM elements from radio buttons",
   "main": "index.js",
