@@ -1,5 +1,5 @@
-import { FormInput } from '../elements/form_input.js'
-import { Panel } from '../elements/panel.js'
+import { FormInput } from './form_input.js'
+import { Panel } from './panel.js'
 
 export function recordStateOfPanelInputElements () {
   document.querySelectorAll('[data-rc-panel-group]').forEach(function (elem) {
