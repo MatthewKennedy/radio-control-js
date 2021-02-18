@@ -1,15 +1,14 @@
 {
-  "name": "radio-control-js",
+  "name": "Radio Control",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "Control activate / deactivate DOM elements from radio buttons",
+  "main": "index.js",
   "devDependencies": {
     "@babel/cli": "^7.12.13",
     "@babel/core": "^7.12.13",
     "@babel/plugin-proposal-class-properties": "^7.12.13",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/preset-env": "^7.12.13",
-    "@babel/preset-react": "^7.12.13",
     "eslint": "^7.19.0",
     "standard": "^16.0.3",
     "webpack": "^5.21.2",
@@ -17,7 +16,7 @@
   },
   "scripts": {
     "dev": "webpack --watch --mode=development",
-    "prod": "webpack --mode=production",
+    "build": "webpack --mode=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,7 +24,7 @@
     "url": "git+https://github.com/MatthewKennedy/radio-control-js.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Matthew Kennedy",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MatthewKennedy/radio-control-js/issues"

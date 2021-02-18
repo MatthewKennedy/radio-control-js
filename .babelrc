@@ -1,7 +1,7 @@
-// projectname/.babelrc
+// radio-control/.babelrc
 {
   "presets": [
-   [ "@babel/preset-env", {
+    [ "@babel/preset-env", {
      "modules": false,
      "targets": {
       "browsers": [
@@ -14,8 +14,7 @@
         "ie 11"
       ]
      }
-   } ],
-   "@babel/preset-react"
+    }]
   ],
   "plugins": [ "@babel/plugin-proposal-class-properties", "@babel/plugin-syntax-dynamic-import" ]
 }

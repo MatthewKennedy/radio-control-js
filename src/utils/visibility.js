@@ -9,7 +9,7 @@ import { disableFieldset, enableFieldset } from '../elements/fieldset.js'
 export function hideRcPanels (rcPanelsGroup) {
   const group = document.querySelector(`[data-rc-panel-group=${rcPanelsGroup}]`)
 
-  if (!group) return console.log(`Wrap your ${rcPanelsGroup} pannels with a block-level element, and add the attribute: [data-rc-panel-group="${rcPanelsGroup}"]`)
+  if (!group) return console.warn(`Wrap your ${rcPanelsGroup} pannels with a block-level element, and add the attribute: [data-rc-panel-group="${rcPanelsGroup}"]`)
 
   group.querySelectorAll('[data-rc-panel-uid]').forEach(function (elem) {
     elem.removeAttribute('data-rc-active')
@@ -25,7 +25,7 @@ export function hideRcPanels (rcPanelsGroup) {
 export function activatePanel (panel) {
   const active = document.querySelector(panel)
 
-  if (!active) return console.log(`There is no panel in your DOM with the attribute: "${panel}"`)
+  if (!active) return console.warn(`There is no panel in your DOM with the attribute: "${panel}"`)
 
   active.setAttribute('data-rc-active', '')
   enableInput(active)
