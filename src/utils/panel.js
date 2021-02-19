@@ -1,13 +1,11 @@
 import { FormInput } from './form_input.js'
 
-export class Panel {
-  constructor (el) {
-    this.el = el
-  }
+const FORM_INPUTS = 'input, select, button, fieldset, textarea, option'
 
-  diable (el) {
+export class Panel {
+  disable (el) {
     el.removeAttribute('data-rc-active')
-    el.querySelectorAll('input, select, button, fieldset, textarea, option').forEach(function (elem) {
+    el.querySelectorAll(FORM_INPUTS).forEach(function (elem) {
       const input = new FormInput()
       input.disable(elem)
     })
@@ -15,7 +13,7 @@ export class Panel {
 
   enable (el) {
     el.setAttribute('data-rc-active', '')
-    el.querySelectorAll('input, select, button, fieldset, textarea, option').forEach(function (elem) {
+    el.querySelectorAll(FORM_INPUTS).forEach(function (elem) {
       const input = new FormInput()
       input.enable(elem)
     })

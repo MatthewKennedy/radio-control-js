@@ -1,26 +1,31 @@
-import { recordStateOfPanelInputElements, hidePanel, activatePanel, initPanels } from './utils/state.js'
+import { State } from './utils/state.js'
+import { FormInput } from './utils/form_input.js'
+import { RadioControler } from './utils/radio_controler.js'
 
-const radioButtonsContainer = '[data-radio-control]'
+const FORM_INPUTS = 'input, select, button, fieldset, textarea, option'
+const radioControlDataAttribute = '[data-radio-control]'
 
 document.addEventListener('DOMContentLoaded', function () {
-  if (!document.querySelector(radioButtonsContainer)) return
+  if (!document.querySelector(radioControlDataAttribute)) return
 
-  recordStateOfPanelInputElements()
-  document.querySelectorAll(radioButtonsContainer).forEach(function (elem) {
-    const radioControlEl = document.querySelector(`[data-radio-control=${elem.dataset.radioControl}]`)
+  recordStateOfInputElements()
 
-    initPanels(radioControlEl)
-    monitorRadiosForChange(radioControlEl)
+  document.querySelectorAll(radioControlDataAttribute).forEach(function (elem) {
+    const radioControlParentEl = document.querySelector(`[data-radio-control=${elem.dataset.radioControl}]`)
+
+    const panelState = new State()
+    const radioControler = new RadioControler()
+
+    panelState.initiate(radioControlParentEl)
+    radioControler.monitorForChange(radioControlParentEl)
   })
 })
 
-function monitorRadiosForChange (radioControlEl) {
-  radioControlEl.querySelectorAll('input[type=radio]').forEach(function (elem) {
-    elem.addEventListener('change', function (event) {
-      const item = event.target.value
-
-      hidePanel(radioControlEl.dataset.radioControl)
-      activatePanel(`[data-rc-panel-uid=${radioControlEl.dataset.radioControl + '_' + item}]`)
+function recordStateOfInputElements () {
+  document.querySelectorAll('[data-rc-panel-group]').forEach(function (elem) {
+    elem.querySelectorAll(FORM_INPUTS).forEach(function (elem) {
+      const input = new FormInput()
+      input.recordDefaults(elem)
     })
   })
 }

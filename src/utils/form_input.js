@@ -1,14 +1,10 @@
 export class FormInput {
-  constructor (el) {
-    this.el = el
-  }
-
   recordDefaults (el) {
     if (el.required === true) el.setAttribute('data-rc-required', true)
     if (el.disabled === true) el.setAttribute('data-rc-disabled', true)
     if (el.checked === true) el.setAttribute('data-rc-checked', true)
     if (el.selected === true) el.setAttribute('data-rc-selected', true)
-  };
+  }
 
   disable (el) {
     el.disabled = true
