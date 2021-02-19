@@ -12,4 +12,17 @@ export class RadioControler {
       })
     })
   }
+
+  handleNestedRcRadios (nestedRadios) {
+    const selectedRadio = nestedRadios.querySelector('input[type=radio]:checked')
+    const defaultSelectedRadio = nestedRadios.querySelector('input[type=radio][data-rc-checked=true]')
+
+    if (nestedRadios.hasAttribute('data-rc-reset-nested')) {
+      selectedRadio.checked = false
+      defaultSelectedRadio.click()
+    } else {
+      const nestedR = new State()
+      nestedR.initiate(nestedRadios)
+    }
+  }
 }

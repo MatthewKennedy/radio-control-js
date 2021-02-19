@@ -1,4 +1,5 @@
 import { Panel } from './panel.js'
+import { RadioControler } from './radio_controler.js'
 
 export class State {
   initiate (radioControlEl) {
@@ -27,8 +28,8 @@ export class State {
     panel.enable(targetPanel)
 
     targetPanel.querySelectorAll('[data-radio-control]').forEach(function (nestedElement) {
-      console.log(nestedElement)
-      this.initiate(nestedElement)
+      const nestedRadios = new RadioControler()
+      nestedRadios.handleNestedRcRadios(nestedElement)
     })
   }
 }
