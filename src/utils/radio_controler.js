@@ -17,12 +17,12 @@ export class RadioControler {
     const selectedRadio = nestedRadios.querySelector('input[type=radio]:checked')
     const defaultSelectedRadio = nestedRadios.querySelector('input[type=radio][data-rc-checked=true]')
 
-    if (nestedRadios.hasAttribute('data-rc-reset-nested')) {
-      selectedRadio.checked = false
-      defaultSelectedRadio.click()
-    } else {
+    if (nestedRadios.hasAttribute('data-rc-no-reset-nested-radios')) {
       const nestedR = new State()
       nestedR.initiate(nestedRadios)
+    } else {
+      selectedRadio.checked = false
+      defaultSelectedRadio.click()
     }
   }
 }
